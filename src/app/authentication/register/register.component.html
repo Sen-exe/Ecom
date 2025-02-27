@@ -1,0 +1,62 @@
+<div class="registration-container d-flex justify-content-center align-items-center" style="height: 100vh; background: rgba(0, 0, 0, 0.5);">
+  <div class="registration-card bg-white p-4 rounded-3 shadow-sm" style="width: 100%; max-width: 400px;">
+    <h2 class="text-center" style="color: #333; margin-bottom: 30px;">Create Account</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="saveUser()">
+
+      <input type="hidden" name="usertype" id="usertype" formControlName="usertype"  value="{{usertype}}" />
+      
+      <!-- Full Name Field -->
+      <div class="mb-2">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your full name" formControlName="name" required
+               style="box-shadow: none; border-color: #007bff;">
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+          <small class="text-danger">Name is required</small>
+        </div>
+      </div>
+
+      <!-- Email Field -->
+      <div class="mb-2">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" formControlName="email" required
+               style="box-shadow: none; border-color: #007bff;">
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+          <small class="text-danger">Valid email is required</small>
+        </div>
+      </div>
+
+      <!-- Phone Number Field -->
+      <div class="mb-2">
+        <label for="number" class="form-label">Phone Number</label>
+        <input type="number" class="form-control" id="phNumber" placeholder="Enter your phone number" formControlName="phNumber" required
+               style="box-shadow: none; border-color: #007bff;" maxlength="10" minlength="10">
+        <div *ngIf="registerForm.get('phNumber')?.invalid && registerForm.get('phNumber')?.touched">
+          <small class="text-danger">Contact number must be 11 digits</small>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="mb-2">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter your password" required
+               style="box-shadow: none; border-color: #007bff;">
+      </div>
+
+      <!-- Confirm Password Field -->
+      <div class="mb-2">
+        <label for="confirm-password" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirm_password" formControlName="confirm_password" placeholder="Confirm your password" required
+               style="box-shadow: none; border-color: #007bff;">
+        <div *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirm_password')?.touched">
+          <small class="text-danger">Passwords do not match</small>
+        </div>
+      </div>
+
+      <!-- Register Button -->
+      <button type="submit" class="btn btn-custom w-100" style="background-color: #007bff; border: none; color: white;">
+        Register
+      </button>
+    </form>
+    <p class="text-center mt-3">Already have an account? <a [routerLink]="['/login']" style="color: #007bff;">Login here</a></p>
+  </div>
+</div>

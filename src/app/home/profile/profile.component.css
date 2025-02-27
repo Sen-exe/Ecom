@@ -1,0 +1,29 @@
+.profile-card {
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.profile-header {
+  background: linear-gradient(135deg, #6c63ff, #8a80f9);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.profile-header img {
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-top: -60px;
+}
+.profile-body {
+  padding: 20px;
+}
+.profile-body h5 {
+  margin-bottom: 10px;
+}
+.profile-body .btn {
+  margin-top: 10px;
+}

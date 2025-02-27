@@ -1,0 +1,77 @@
+
+<div class="modal-backdrop" >
+  <div class="modal-content overflow-y-auto py-2">
+
+    <div class="py-1 d-flex justify-content-center ">   
+      <h2 class="size-20">Post A Job</h2>
+    </div>
+    
+    <form [formGroup]="postJobForm" (ngSubmit)="saveJob()">
+
+      <input type="hidden" name="authorID" id="authorID" formControlName="authorID" value="{{authorID.id}}" required />
+
+      <div class="py-1">
+        <label for="name">Company Name</label>
+        <input type="text" name="companyName" id="companyName" formControlName="companyName" required placeholder="Enter Company Name" />
+        <div *ngIf="postJobForm.get('companyName')?.invalid && postJobForm.get('companyName')?.touched">
+          <small class="text-danger">Company Name is required</small>
+        </div>
+      </div>
+
+      <div class="py-1">
+        <label for="jobAddress">Address</label>
+        <input type="text" name="jobAddress" id="jobAddress" formControlName="jobAddress" required placeholder="Enter Address" />
+        <div *ngIf="postJobForm.get('jobAddress')?.invalid && postJobForm.get('jobAddress')?.touched">
+          <small class="text-danger">Company Address Required</small>
+        </div>
+      </div>
+
+      <div class="py-1">
+        <label for="jobPosition">Position</label>
+        <input type="text"  name="jobPosition" id="jobPosition" formControlName="jobPosition"  required  placeholder="Enter Job Position" />
+        <div *ngIf="postJobForm.get('jobPosition')?.invalid && postJobForm.get('jobPosition')?.touched">
+          <small class="text-danger">Job Position Required</small>
+        </div>
+      </div>
+
+      <div class="py-1">
+        <label for="jobExperience">Experience</label>
+        <input type="text" id="jobExperience" formControlName="jobExperience" required placeholder="Enter Experience" />
+        <div *ngIf="postJobForm.get('jobExperience')?.invalid && postJobForm.get('jobExperience')?.touched">
+          <small class="text-danger">Job Experience Required</small>
+        </div>
+      </div>
+
+      <div class="py-1">
+        <label for="jobSalary">Salary</label>
+        <input type="text" name="jobSalary" id="jobSalary" formControlName="jobSalary" required placeholder="Job Salary" />
+        <div *ngIf="postJobForm.get('jobSalary')?.invalid && postJobForm.get('jobSalary')?.touched">
+          <small class="text-danger">Job Salary Required</small>
+        </div>
+      </div>
+
+      <div class=" ">
+        <label for="jobDescription">Description</label>
+        <div class=" "> 
+          <textarea rows="7" class="col-12" type="text"  name="jobDescription" id="jobDescription" required formControlName="jobDescription" placeholder="Enter Description" ></textarea>
+        </div>
+        <div *ngIf="postJobForm.get('description')?.invalid && postJobForm.get('description')?.touched">
+           <small class="text-danger">Job Description Required</small>
+         </div>
+      </div>
+
+
+      <div class="buttons d-flex justify-content-center">
+        <button class="btn-cancel border-2 px-4 py-1" type="button" (click)="onCancel()">Close</button>
+        <!-- <button class="btn-save" type="submit" [disabled]="contactForm.invalid"> {{ isEditMode ? 'Save Changes' : 'Add Contact' }}</button> -->
+        <button class="btn-save px-4 py-1" type="submit" > List Job</button>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
+<!-- <div *ngIf="showAlert" class="alert alert-success d-flex justify-content-end align-content-center " role="alert">
+  {{ alertMessage }}
+</div> -->

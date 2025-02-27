@@ -1,0 +1,23 @@
+.img{
+  border: 0cap;
+  border-radius: 100px;
+}
+p{
+  transition: all 0.2s;
+}
+a{
+  text-decoration-line: none;
+  color:white;
+}
+a:hover{
+  color: black;
+}
+ 
+p:hover{
+  background-color: lightskyblue;
+  border-radius: 2px;
+  color: black;
+  padding-left: 10px;
+
+  
+}

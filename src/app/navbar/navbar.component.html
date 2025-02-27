@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+ <title>Document</title>
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <div class="container-fluid">
+     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+      </svg>
+     </button>
+       <a class="navbar-brand ms-3"[routerLink]="['/user/homepage']" *ngIf="user.usertype == 0">SkillScape</a>
+       <a class="navbar-brand ms-3"[routerLink]="['/admin/dashboard']" *ngIf="user.usertype == 1">SkillScape</a>
+       <div class="d-flex justify-content-center align-content-center mt-2 px-3 ">
+         <h5 class="size-5 text-muted px-2">Welcome {{user.name}}</h5>
+       </div>
+       <div class="collapse navbar-collapse py-2" id="navbarNav">
+           <ul class="navbar-nav me-auto">
+               <li class="nav-item">
+               </li>
+           </ul>
+           <!-- Search Bar -->
+           <form class="d-flex mx-3">
+
+               <input class="form-control mx-2" type="search" placeholder="Search" aria-label="Search">
+               <button class="btn btn-outline-primary" type="submit">Search</button>
+           </form>
+
+           <!-- Add Listing Button -->
+           <button class="btn btn-primary" (click)="openAddListingModal()" type="button">Add Listing</button>
+       </div>
+   </div>
+ </nav>
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<router-outlet></router-outlet>
+<app-drawer data-bs-toggle="offcanvas" data-bs-target="#demo" ></app-drawer>
+<app-addlisting *ngIf="isAddListingModalVisible" (cancel)="closeAddListingModal()"></app-addlisting>

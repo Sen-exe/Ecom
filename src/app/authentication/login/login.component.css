@@ -1,0 +1,22 @@
+ .main{
+    /* background-color:blue; */
+    height:100%;
+  
+ }
+ .sub-main{
+    /* background-color:red; */
+ }
+
+ .box {
+  background-color: cornflowerblue;
+  
+  border-radius:10px
+ }
+
+ .input-form{
+  border-radius:5px;
+  border-color: white;
+ }
+ .head {
+  color:white
+ }

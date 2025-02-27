@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "95aa",
+      "name": "Sen",
+      "email": "fuerzas353@gmail.com",
+      "phNumber": 12345678901,
+      "password": "sen213",
+      "confirm_password": "sen123"
+    },
+    {
+      "id": "7e08",
+      "name": "Jocel Anne",
+      "email": "fuerzas353@gmail.com",
+      "phNumber": 12345678901,
+      "password": "sen123"
+    },
+    {
+      "id": "dccf",
+      "name": "Jocel Anne",
+      "email": "Fuerzas353@gmail.com",
+      "phNumber": 12345678901,
+      "password": "wendell123"
+    }
+  ]
+}

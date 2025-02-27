@@ -1,0 +1,50 @@
+<div class="login-container d-flex justify-content-center align-items-center" style="height: 100vh; background: rgba(0, 0, 0, 0.5);">
+
+  <div class="login-card bg-white p-4 rounded-3 shadow-sm" style="width: 100%; max-width: 400px;">
+      <h2 class="text-center" style="color: #333; margin-bottom: 30px;">Login</h2>
+
+      <form (ngSubmit)="onLogin() ">
+
+        <div class="mb-3">
+          <div class="div">
+          <label for="email" class="form-label">Email address</label>
+        </div>
+          <input class="col col-12 rounded-2 py-2"  type="text"  [(ngModel)]="email" name="email" required style="box-shadow: none; border-color: #007bff;">
+        </div>
+
+          <div class="mb-3">
+            <div class="div">
+            <label for="password" class="form-label">Password</label>
+          </div>
+            <input class="col col-12 rounded-2 py-2"  type="password" [(ngModel)]="password" name="password" required style="box-shadow: none; border-color: #007bff;">
+          </div>
+          <button type="submit" class="btn btn-custom w-100" style="background-color: #007bff; border: none; color: white;">
+              Login
+          </button>
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      </form>
+      <!-- <form (ngSubmit)="onLogin()">
+        <label>
+          Email
+          <input type="text"  [(ngModel)]="email" name="email" required>
+        </label>
+        <label>
+          Password:
+          <input type="password" [(ngModel)]="password" name="password" required>
+        </label>
+        <button type="submit">Login</button>
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+      </form> -->
+
+      <a href="#" class="forgot-password mt-3 d-block text-center" style="color: #007bff;">Forgot password?</a>
+      <p class="text-center mt-3">Don't have an account? <a style="color: #007bff;"  [routerLink]="['/register']">Create one</a></p>
+    </div>
+  </div>
+
+
+
+
+
+
+

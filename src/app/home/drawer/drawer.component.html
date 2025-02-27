@@ -1,0 +1,41 @@
+<div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+  <div class="offcanvas-header d-flex">
+
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="rounded-4  d-flex justify-content-center">
+    <img src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg" class="img col col-5 w-40 h-20 " alt="Profile">
+    <!-- <img src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg" class=" px-6 col col-6" alt=""> -->
+
+  </div>
+
+  <div class="d-flex justify-content-center py-1">
+    <h5>{{user.name}}</h5>
+  </div>
+
+  <div class="d-flex justify-content-center gap-5">
+    <p>{{ hidePhoneNumber(user.phNumber) }}</p>
+    <!-- <p>{{ user.phNumber.slice(-2).padStart(user.phNumber.length, '*') }}</p> -->
+    <p>{{user.email}}</p>
+  </div>
+
+
+  <div class="offcanvas-body" >
+    <!-- <p class="py-1"><a [routerLink]="['/user/homepage']" >Home</a></p> -->
+    <p class="py-1" *ngIf="user.usertype === 0"> <a [routerLink]="['/user/homepage']">Home</a>  </p>
+    <p class="py-1" *ngIf="user.usertype === 1"> <a [routerLink]="['/admin/dashboard']">Admin Dashboard</a> </p>
+    <!-- <p class="py-1"> <a [routerLink]="user.usertype === 0 ? '/user/homepage' : '/admin/homepage'">{{ user.usertype === 0 ? 'Home' : 'Admin Page' }}</a></p> -->
+    <!-- <p class="py-1"><a [routerLink]="['/user/profile']">Users List</a></p> -->
+    <p class="py-1"><a [routerLink]="['/user/profile']">Profile</a></p>
+    <p class="py-1"><a [routerLink]="user.usertype === 0 ? '/user/homepage' : '/admin/homepage'" >{{ user.usertype === 0 ? 'My Applications' : 'Applications List' }}</a></p>
+    <p class="py-1" *ngIf="user.usertype === 1"><a href="">Job Posts</a></p>
+    <p class="py-1"  *ngIf="user.usertype === 1"><a href="">Statistics</a></p>
+    <p class="py-1"><a href="">Settings</a></p>
+    <button class="btn btn-danger" type="button" (click)="onLogout()">Log Out</button>
+  </div>
+
+</div>
+<!-- <router-outlet></router-outlet> -->
+
+

@@ -1,0 +1,64 @@
+<app-navbar class="sticky-top"></app-navbar>
+
+<!-- <div class="modal-backdrop" > -->
+    <div class="modal-content overflow-y-auto py-2">
+
+      <div class="py-1 d-flex justify-content-center ">
+        <h2 class="size-20">Edit Job</h2>
+      </div>
+
+      <form [formGroup]="updateForm" (ngSubmit)="updateJob()">
+        <input type="hidden" name="authorID" formControlName="authorID" />
+
+        <div class="py-1">
+          <label for="companyName">Company Name</label>
+          <input type="text" name="companyName" formControlName="companyName" required />
+        </div>
+
+        <div class="py-1">
+          <label for="jobAddress">Address</label>
+          <input type="text" name="jobAddress" formControlName="jobAddress" />
+        </div>
+
+        <div class="py-1">
+          <label for="jobPosition">Position</label>
+          <input type="text" name="jobPosition" formControlName="jobPosition" />
+        </div>
+
+        <div class="py-1">
+          <label for="jobExperience">Experience</label>
+          <input type="text" name="jobExperience" formControlName="jobExperience" />
+        </div>
+
+        <div class="py-1">
+          <label for="jobSalary">Salary</label>
+          <input type="text" name="jobSalary" formControlName="jobSalary" />
+        </div>
+
+        <div class="py-1">
+          <label for="jobDescription">Description</label>
+          <div class=" ">
+            <textarea rows="8" class="col-12" type="text"  name="jobDescription" id="jobDescription"   formControlName="jobDescription" value="{{jobdata.jobDescription}}"></textarea>
+          </div>
+        </div>
+
+        <div class="buttons d-flex justify-content-center">
+          <button class="btn-cancel border-2 px-4 py-1" [routerLink]="['/user/homepage']">Back</button>
+          <button class="btn-save px-4 py-1" type="submit">Update</button>
+        </div>
+      </form>
+
+      <!-- <div class=" ">
+        <label for="jobDescription">Description</label>
+        <div class=" ">
+          <textarea rows="10" class="col-12" type="text"  name="jobDescription" id="jobDescription"   formControlName="jobDescription" value="{{jobdata.jobDescription}}"></textarea>
+        </div>
+
+      </div> -->
+
+    </div>
+  <!-- </div> -->
+
+  <!-- <div *ngIf="showAlert" class="alert alert-success d-flex justify-content-end align-content-center " role="alert">
+    {{ alertMessage }}
+  </div> -->

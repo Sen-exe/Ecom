@@ -1,0 +1,38 @@
+<app-navbar class="sticky-top"></app-navbar>
+
+<main role="main" class="container">
+  <div class="row d-flex justify-content-center overflow-auto h-100" >
+    <div class="col-lg-12 blog-main">
+      <h5 class="pb-6 mt-3 font-italic  ">
+        {{viewjob.companyName}}
+      </h5>
+      <p class="blog-post-meta border-bottom">{{viewjob.jobAddress}}</p>
+       
+      <div class="blog-post">
+        <h3 class="blog-post-title">{{viewjob.jobPosition}}</h3>
+        <hr>
+        <div class=" overflow-y-auto" style="height: 300px; width: 100%">
+          <p>{{viewjob.jobDescription}}</p>
+        </div>
+
+        <blockquote>
+          <p>Experience Needed : {{viewjob.jobExperience}}</p>
+          <p>Job Salary : {{viewjob.jobSalary}}</p>
+        </blockquote>
+        </div>
+
+      <nav class="blog-pagination d-flex justify-content-between justify-items-center">
+        <div class="py-3">
+          <a class="btn btn-outline-primary " [routerLink]="['/user/homepage']">Back</a>
+        </div>
+        <div class="d-flex gap-3 py-3">
+          <a class="btn btn-outline-primary" href="#">Bookmark</a>
+          <a class="btn btn-outline-success" *ngIf="viewjob.authorID !== user.id">Apply</a>
+        </div>
+
+      </nav>
+
+    </div>
+  </div>
+
+</main>

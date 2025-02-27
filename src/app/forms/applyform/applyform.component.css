@@ -1,0 +1,90 @@
+.modal-backdrop {
+    position: fixed; /* Fixes the backdrop to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 0; /* Make sure it's above other content */
+    margin: 0; /* Reset margin for backdrop */
+    padding: 0; /* Reset padding for backdrop */
+  }
+   
+  .modal-content {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center items horizontally */
+    /* align-items: center; Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 1000px; /* Set the maximum width to 250px */
+    height: 550px; /* Adjust the height automatically based on content */
+    width: 90%; /* Set the width to 90% to fill the maximum width */
+    position: fixed; /* Fixes the modal content to the viewport */
+    top: 55%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half the width and height */
+    z-index: 1001; /* Higher than the backdrop */
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+   
+  .modal-form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Make items stretch to fill the container */
+    width: 100%;
+  }
+   
+  .form-group {
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    margin-bottom: 25px; /* Add space between form groups */
+    align-items: flex-start; /* Align items to the left */
+   
+  }
+   
+  input {
+    width: 100%; /* Make input fields take full width of form group */
+    padding: 5px; /* Reduce padding to decrease height */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    height: 30px; /* Set a fixed height for better appearance */
+    left: 50%;
+  }
+  .button-group {
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: center; /* Center buttons */
+    margin-top: 10px; /* Space above buttons */
+  }
+   
+  button {
+    margin: 0 10px; /* Space between buttons */
+  }
+   
+   
+  
+  .btn-cancel{
+    color: black;
+    background-color: white;
+    border-color: #7500c0;
+    border-radius:15px;
+    
+  }
+  .btn-save{
+    color: white;
+    background-color: #7500c0;
+    border-radius:15px;
+    border-color: #7500c0;
+  
+    
+  }
+  .alert {
+    position: fixed;
+    top: 500px;
+    right: 20px;
+    z-index: 1050; /* Ensure it’s above other content */
+  }
